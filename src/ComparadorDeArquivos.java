@@ -47,9 +47,9 @@ public class ComparadorDeArquivos {
             String linhaDoArquivo1 = i < arquivos.get(0).size() ? arquivos.get(0).get(i) : null;
             String linhaDoArquivo2 = i < arquivos.get(1).size() ? arquivos.get(1).get(i) : null;
 
-            if (linhaDoArquivo1 == null) {
+            if (linhaDoArquivo1 == null && !(linhaDoArquivo2 == null)) {
                 System.out.println("Linha " + (i + 1) + ": ➕ Adicionada: " + linhaDoArquivo2);
-            } else if (linhaDoArquivo2 == null) {
+            } else if (linhaDoArquivo2 == null && !(linhaDoArquivo1 == null)) {
                 System.out.println("Linha " + (i + 1) + ": ❌ Removida: " + linhaDoArquivo1);
             } else if (!linhaDoArquivo1.equals(linhaDoArquivo2)) {
                 System.out.println("Linha " + (i + 1) + ": 🔁 Alterada");
